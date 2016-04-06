@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="win_droid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:win_droid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Background>
+        <SolidColorBrush Color="#FF2C3E50"/>
+    </Page.Background>
+
+    <Grid Background="#FF2C3E50" Margin="0,-26.667,0,-0.333">
+        <TextBlock Name="Time" Margin="10,459,159,0" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Height="78" FontSize="72" FontFamily="Global Sans Serif" Foreground="#FFECF0F1"/>
+        <TextBlock Name="Date" Margin="10,542,159,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" FontSize="36" FontFamily="Global Sans Serif" Foreground="#FFECF0F1">
+        	<Run Text="Monday"/>
+        	<LineBreak/>
+        	<Run Text="January 1"/>
+        </TextBlock>
+        <ProgressBar Name="BatteryBar" Height="33" Margin="10,320,164,0" VerticalAlignment="Top" Foreground="#FF3498DB">
+            <ProgressBar.Background>
+                <SolidColorBrush Color="#FF45617D" Opacity="0.5"/>
+            </ProgressBar.Background>
+        </ProgressBar>
+        <TextBlock Name="BatteryPercentage" Margin="75,269,164,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" FontSize="48" Text="0%" Foreground="#FFECF0F1"/>
+        <TextBlock Name="BatteryLabel" HorizontalAlignment="Left" Margin="10,293,0,0" TextWrapping="Wrap" Text="Battery:" VerticalAlignment="Top" FontSize="18" Foreground="#FFECF0F1"/>
+        <TextBlock Name="BatterySaving" Margin="10,358,164,0" TextWrapping="Wrap" Text="Battery Saving Mode:" VerticalAlignment="Top" Height="14" Foreground="#FFECF0F1"/>
+        <Rectangle HorizontalAlignment="Left" Height="46" Margin="10,35,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="87">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF45617D" Opacity="0.5"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Name="CompassTrue" Text="0°" HorizontalAlignment="Left" Margin="13,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="81" Foreground="#FFECF0F1" FontSize="36" TextAlignment="Center"/>
+        <Ellipse HorizontalAlignment="Left" Height="55" Margin="100,31,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="55">
+            <Ellipse.Fill>
+                <SolidColorBrush Color="#FF45617D" Opacity="0.5"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock HorizontalAlignment="Left" Margin="100,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Height="55" TextAlignment="Center" Text="N"/>
+        <Grid HorizontalAlignment="Left" Height="45" Margin="100,36,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <CompositeTransform x:Name="CompassRotation" Rotation="0"/>
+            </Grid.RenderTransform>
+            <Rectangle Fill="#FFECF0F1" Height="23" Margin="25,22,25,0" Stroke="#00000000" VerticalAlignment="Top"/>
+            <Rectangle Fill="#FFE74C3C" Height="23" Margin="25,0" Stroke="#00000000" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        </Grid>
+        <TextBlock Name="InclinometerX" Text="0" HorizontalAlignment="Right" Margin="0,67,37,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="122" Foreground="#FFECF0F1" FontSize="25" TextAlignment="Right" FontFamily="Global Monospace"/>
+        <TextBlock Name="InclinometerY" Text="0" HorizontalAlignment="Right" Margin="0,99,37,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Width="122" Foreground="#FFECF0F1" FontSize="25" TextAlignment="Right" FontFamily="Global Monospace"/>
+        <TextBlock Text="X" HorizontalAlignment="Right" Margin="0,67,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="22" FontSize="25" TextAlignment="Center">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="#FF45617D"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock Text="Y" HorizontalAlignment="Right" Margin="0,99,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="22" FontSize="25" TextAlignment="Center">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="#FF45617D"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBlock Name="InclinometerZ" Text="0" HorizontalAlignment="Right" Margin="0,131,37,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="122" Foreground="#FFECF0F1" FontSize="25" TextAlignment="Right" FontFamily="Global Monospace"/>
+        <TextBlock Text="Z" HorizontalAlignment="Right" Margin="0,131,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="22" FontSize="25" TextAlignment="Center" Foreground="#FF45617D"/>
+        <TextBlock Text="Tilt" HorizontalAlignment="Right" Margin="0,33,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="149" FontSize="25" TextAlignment="Center" Foreground="#FF45617D"/>
+        <Rectangle Fill="#FF45617D" HorizontalAlignment="Left" Height="2" Margin="241,60,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="149"/>
+        <TextBlock x:Name="PropertiesThing" HorizontalAlignment="Right" Margin="0,178,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="149" FontSize="25" Foreground="#FF45617D" TextAlignment="Center">
+        	<Run Text="DPI "/>
+        	<Run Text="(x/y)"/>
+        </TextBlock>
+        <TextBlock Name="DPIX" Text="0" HorizontalAlignment="Right" Margin="0,216,91,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="68" Foreground="#FFECF0F1" FontSize="25" TextAlignment="Center"/>
+        <TextBlock Text="/" HorizontalAlignment="Right" Margin="0,216,78,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="13" Foreground="#FF45617D" FontSize="25" TextAlignment="Center"/>
+        <TextBlock Name="DPIY" Text="0" HorizontalAlignment="Right" Margin="0,216,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="68" Foreground="#FFECF0F1" FontSize="25" TextAlignment="Center"/>
+        <Rectangle Fill="#FF45617D" HorizontalAlignment="Left" Height="2" Margin="241,209,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="149"/>
+    </Grid>
+</Page>
